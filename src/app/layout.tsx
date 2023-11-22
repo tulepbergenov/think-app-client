@@ -1,6 +1,11 @@
 import { IChildren } from "@/shared/types";
 import { appTitle } from "@/shared/utils";
 import type { Metadata, Viewport } from "next";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import { Providers } from "@/core/providers";
 
 export const metadata: Metadata = {
   title: appTitle(),
@@ -19,7 +24,9 @@ const RootLayout = ({ children }: IChildren) => {
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <Providers>
+          <main>{children}</main>
+        </Providers>
       </body>
     </html>
   );
